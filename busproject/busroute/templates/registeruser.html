@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+body{
+background-color:#F8F8FF;
+opacity:0.8;
+}
+table, td, th{
+  border: 2px solid black;
+  text-align: center;
+
+
+}
+th,tr,td{
+  padding: 20px;
+  text-align: center;
+
+
+}
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    {%csrf_token %}
+
+<center>
+     <ul>
+     <li><a class="active" href="/home1/">HOME</a></li>
+     <li><a href="/contact/">CONTACT</a></li>
+     <li><a href="/about/">ABOUT</a></li>
+     <li><a href="/index/">LOGOUT</a></li>
+
+    </ul>
+<table>
+    <tr>
+        <br><br>
+        <h1>REGISTERED USERS</h1>
+        <br> <br> <br> <br> <br>
+        <th>USER NAME</th>
+        <th>USER EMAIL</th>
+        <th>MOBILE NUMBER</th>
+        <th>USER PASSWORD</th>
+
+    </tr>
+    <tbody>
+    {% for register in Register %}
+    <tr>
+        <td>{{register.name}}</td>
+        <td>{{register.email}}</td>
+        <td>{{register.mobileno}}</td>
+        <td>{{register.password}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+</body>
+</html>

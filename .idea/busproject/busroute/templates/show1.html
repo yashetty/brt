@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title></title>
+
+
+<style>
+
+
+a{
+color:white;
+}
+
+ .button:hover, .button:active, .button:focus {
+  background: green;
+}
+.button{
+
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  border-radius: 8px;
+  outline: 0;
+  background:  #333;
+  width: 60%;
+  border: 0;
+  padding: 15px;
+
+  font-size: 14px;
+  webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-decoration:none;
+
+}
+ button:hover, button:active, button:focus {
+  background: green;
+}
+body {
+
+  background : #F8F8FF;
+  opacity:0.8;
+}
+
+table, td, th{
+  border: 2px solid black;
+  text-align: center;
+
+
+}
+th,tr,td{
+  padding: 20px;
+  text-align: center;
+
+
+}
+table {
+  border-collapse: collapse;
+  width: 60%;
+
+
+
+}
+
+
+      ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+}
+
+</style>
+</head>
+<body>
+    {%csrf_token %}
+     <ul>
+     <li><a class="active" href="/home1/">HOME</a></li>
+
+     <li><a href="/contact/">CONTACT</a></li>
+     <li><a href="/about/">ABOUT</a></li>
+     <li><a href="/index/">LOGOUT</a></li>
+
+    </ul>
+
+<center>
+<table>
+    <br><br><br>
+    <tr>
+        <th>Stop ID</th>
+        <th>Stop Name</th>
+        <th>Distance From Source</th>
+        <th>Arrival Time</th>
+        <th>Action</th>
+
+    </tr>
+    <tbody>
+    {% for route in routes %}
+    <tr>
+        <td>{{route.idroute}}</td>
+        <td>{{route.name}}</td>
+        <td>{{route.distfromsrc}}</td>
+        <td>{{route.arrival}}</td>
+        <td><button class="button"><a href="/edit/{{route.id}}"> UPDATE BUS </a></button>
+            <br><br>
+
+    <button class="button"><a href="/delete/{{route.id}}"> DELETE BUS </a></button></td>
+
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+</body>
+</html>

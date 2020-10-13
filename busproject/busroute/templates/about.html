@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+</head>
+<style>
+
+img {
+  border-radius: 15px;
+  display: block;
+  background-size:80%;
+  margin-left: auto;
+  margin-right: auto;
+  width:60%;
+}
+div {
+  background: white;
+  border-style: solid;
+  border-color:black;
+}
+    body{
+    background-color: #F8F8FF;
+    opacity:0.8;
+    }
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+}
+
+
+</style>
+<body>
+<center>
+
+<h1 >BUS RAPID TRANSMIT SYSTEM</h1></center>
+    <ul>
+     <li><a class="active" href="/home1/">HOME</a></li>
+     <li><a href="/contact/">CONTACT</a></li>
+     <li><a href="/about/">ABOUT</a></li>
+    </ul>
+
+<br><br><br>
+<div>
+
+    <font size="4">
+<h3>
+Bus Rapid Transit is a bus-based public transport system designed to improve capacity and reliability relative to a conventional bus system. BRT aims to combine the capacity and speed of a train with the flexibility, lower cost and simplicity of a bus system.
+
+There are a number of distinguishing features of a Bus Rapid Transit system that deliver greater speed and convenience over a traditional bus transit system including:
+buses that travel in bus-only lanes and get priority traffic signaling,
+routes with more frequent, regularly-scheduled service to major destinations for less stop-and-go travel,
+platform-style boarding, pre-paid fare cards and electronic passes to reduce boarding times,
+Automated Vehicle Location (AVL) system that tracks the location of buses and allows passengers to follow the bus on their smart phone,
+Connection to transit hubs for multimodal transportation, e.g. other bus systems, railways, airports, etc.
+Biking and hiking trails adjacent to BRT routes,
+and more.</h3>
+ </div>
+<img src="{% static 'busroute/images/brt1.png' %}"/>
+
+</body>
+</html>

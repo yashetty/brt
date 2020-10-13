@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+
+
+body{
+background-color:#F8F8FF;
+opacity:0.8;
+}
+table, td, th{
+  border: 2px solid black;
+  text-align: center;
+
+
+}
+th,tr,td{
+  padding: 20px;
+  text-align: center;
+
+
+}
+table {
+  border-collapse: collapse;
+  width: 60%;
+  }
+button{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  border-radius: 8px;
+  outline: 0;
+  background:  #333;
+  width: 80%;
+  border: 0;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-decoration:none;
+
+}
+ button:hover, button:active, button:focus {
+  background: green;
+}
+
+      ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+}
+
+
+</style>
+</head>
+<body>
+<ul>
+     <li><a class="active" href="/home1/">HOME</a></li>
+     <li><a href="/contact">CONTACT</a></li>
+     <li><a href="/about/">ABOUT</a></li>
+     <li align="right"><a href="/index/">SIGN OUT</a></li>
+    </ul>
+
+    {%csrf_token %}
+<center>
+<table>
+    <tr>
+        <br><br>
+        <h1>TIMETABLE</h1>
+        <br> <br> <br> <br> <br>
+        <th>Stop ID</th>
+        <th>Stop Name</th>
+        <th>Distance From Source</th>
+        <th>Arrival Time</th>
+
+    </tr>
+    <tbody>
+    {% for route in routes %}
+    <tr>
+        <td>{{route.idroute}}</td>
+        <td>{{route.name}}</td>
+        <td>{{route.distfromsrc}}</td>
+        <td>{{route.arrival}}</td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+</body>
+</html>
